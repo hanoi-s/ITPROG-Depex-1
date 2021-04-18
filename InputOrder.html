@@ -1,0 +1,129 @@
+<html>
+<head>
+  <title>Mag-umagahan | Order</title>
+  <script src="js/InputOrder.js"></script>
+  <link rel="stylesheet" href="styles/InputOrder.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Roboto&display=swap');
+  </style>
+</head>
+<body>
+  <div class="center">
+    <form method="post" action="ProcessOrder.php" onsubmit="return validate()">
+    <h3 style='font-size:30px'>Personal Information</h3>
+
+    <div  class="container-flex">
+
+      <div class="info-1">
+        <label for="fname">Name:</label>
+        <input type="text" id="name" name="name" placeholder="first-name last-name" class="input-box">
+      </div>
+      <div class="info-1">
+        <input type="radio" id="male" name="gender" value="male" checked="checked" onclick="placeholder()">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" onclick="placeholder()">
+        <label for="female">Female</label>
+      </div>
+
+      <div class="info-1">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" class="input-box" size="40%" placeholder="Lot No., Street Address, Subdivision, Barangay, City"><br>
+      </div>
+
+      <div class="info-1">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="input-box" placeholder="jmendoza@gmail.com"><br>
+      </div>
+    </div>
+    <br>
+
+    <h3 style='font-size:30px'>Order Information</h3>
+    <table style="width:100%" class="content-table">
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="item1" name="items[]" value="rice" onclick="enableInput()"></td>
+        <td><label for="item1"><img src="img/rice.jpg" width="70" name="item1" class="images"></label></td>
+        <td><label for="item1" class="item-name">Rice</label></td>
+        <td>Php 10.00</td>
+        <td><input type="number" min="0" value="0" id="qty1" name="qty1" class="qty-input" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="item2" name="items[]" value="friedrice" onclick="enableInput()"></td>
+        <td><label for="item2"><img src="img/fried-rice.jpg" width="70" class="images"></label></td>
+        <td><label for="item2" class="item-name">Fried Rice</label></td>
+        <td>Php 12.00</td>
+        <td><input type="number" min="0" value="0" id="qty2" name="qty2" class="qty-input" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="item3" name="items[]" value="water" onclick="enableInput()"></td>
+        <td><label for="item3"><img src="img/bottled-water.jpg" width="70" class="images"></label></td>
+        <td><label for="item3" class="item-name">Bottled Water</label></td>
+        <td>Php 15.00</td>
+        <td><input type="number" min="0" value="0" id="qty3" name="qty3" class="qty-input" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="item4" name="items[]" value="tapsilog" onclick="enableInput()"></td>
+        <td><label for="item4"><img src="img/tapsilog.jpg" width="70" class="images"></label></td>
+        <td><label for="item4" class="item-name">Tapsilog</label></td>
+        <td>Php 45.00</td>
+        <td><input type="number" min="0" value="0" id="qty4" name="qty4" class="qty-input" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="item5" name="items[]" value="porksilog" onclick="enableInput()"></td>
+        <td><label for="item5"><img src="img/porksilog.jpg" width="70" class="images"></label></td>
+        <td><label for="item5" class="item-name">Porksilog</label></td>
+        <td>Php 40.00</td>
+        <td><input type="number" min="0" value="0" id="qty5" name="qty5" class="qty-input" disabled></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="item6" name="items[]" value="tocilog" onclick="enableInput()"></td>
+        <td><label for="item6"><img src="img/tocilog.jpg" width="70" class="images"></label></td>
+        <td><label for="item6" class="item-name">Tocilog</label></td>
+        <td>Php 35.00</td>
+        <td><input type="number" min="0" value="0" id="qty6" name="qty6" class="qty-input" disabled></td>
+      </tr>
+    </table>
+
+    <div class="container-flex">
+      <div>
+        <!-- ORDER TYPE -->
+        <label for="order"></label>
+        <input type="radio" id="takeout" name="order" value="takeout" checked="checked">
+        <label for="takeout">Take Out</label>
+        <input type="radio" id="delivery" name="order" value="delivery">
+        <label for="delivery">Delivery (Php 40.00) </label>
+        <input type="radio" id="dine_in" name="order" value="dine_in">
+        <label for="dine_in">Dine In</label>
+      </div>
+
+      <br>
+      <div>
+      <!-- MODE OF PAYMENT -->
+      <label for="mop"></label>
+
+      <input type="radio" id="cash" name="mop" value="cash" onclick="enableInput()" checked="checked">
+      <label for="cash">Cash</label>
+
+      <input type="radio" id="cc" name="mop" value="cc" onclick="enableInput()">
+      <label for="cc">Credit Card</label>
+
+      <label for="ccnum"><input type="number" id="ccnum" name="ccnum" inputmode="numeric" class="input-box" placeholder="xxxx xxxx xxxx" maxLength="12" value="">
+      </label>
+      </div>
+      <br><br>
+
+      <div>
+      <button type="submit" value="place-order" class='place-order-btn'>Place Order</button>
+      </div>
+    </div>
+    </form>
+  </div>
+
+</body>
+</html>

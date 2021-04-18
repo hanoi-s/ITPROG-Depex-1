@@ -1,0 +1,120 @@
+*{
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background: lightblue;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.center{
+  width: 50%;
+  height: auto;
+  margin: 10px;
+  box-sizing: border-box;
+  font-size: 50px;
+
+  background: antiquewhite;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+
+.center h3{
+  text-align: center;
+  border-bottom: 1px solid silver;
+}
+
+.center form{
+  padding: 0 20;
+  box-sizing: border-box;
+}
+
+.info-1{
+  margin-bottom: 10px;
+}
+
+.input-box {
+  height: 35px;
+  padding: 8px;
+}
+
+.content-table{
+  text-align: center;
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+}
+
+.content-table th tr {
+  text-align: center;
+  align-items: center;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid lightslategrey;
+}
+
+.qty-input{
+  width: 30%;
+  height: 40px;
+  padding: 6px;
+}
+
+.images{
+  border-radius: 5px;
+  width: 100px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: cadetblue;
+}
+
+.images:hover{
+  border-color: dodgerblue;
+  border-width: 3px;
+  transition: .1s;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.images:hover{
+  border-radius:
+}
+
+.item-name:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: dodgerblue;
+}
+
+.container-flex{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  margin: 0px;
+}
+
+button{
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+}
+
+button:hover{
+  background-color: #459a48;
+  cursor: pointer;
+}
